@@ -22,8 +22,11 @@ public class MainMenu: UIScreen
     void StartGame()
     {
         Debug.Log("Welcome!");
+        gameScreen.SetupScreen(this);
 
         CloseScreen();
+
+        gameScreen.StartScreen();
     }
 
 }
