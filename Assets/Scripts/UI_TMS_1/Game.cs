@@ -1,24 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Game : UIScreen
 {
-    [SerializeField] private Button_Logic back;
-
+    [SerializeField] private Button_Logic backGame;
+    //[SerializeField] private UIScreen _shopScreen;
     private UIScreen menuScreen;
-
+    
     public override void SetupScreen(UIScreen previousScreen)
     {
         if (menuScreen == null)
             menuScreen = previousScreen;
+        
 
-        back.AddListener(BackToMenu);
+        backGame.AddListener(BackToMenu);
+      
+
     }
 
-    void BackToMenu()
+     public  void BackToMenu()
     {
         CloseScreen();
         menuScreen.StartScreen();
     }
+
+   
 }

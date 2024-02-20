@@ -1,21 +1,29 @@
+using DG.Tweening;
 using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public abstract class UIScreen : MonoBehaviour
 {
     private Image[] imagesToFade;
+    //private Color[] buttonsColor;
+    
+
     private bool Animate = true;
     public float fadeDuration = 0.5f;
 
 
     private void OnEnable()
     {
+          
         imagesToFade = GetComponentsInChildren<Image>();
+
+        //for (int i =0; i< imagesToFade.Length; i++)
+        //{
+        //    buttonsColor[i] = imagesToFade;
+        //}
 
         if (imagesToFade.Count() < 1)
             Animate = false;
@@ -27,15 +35,13 @@ public abstract class UIScreen : MonoBehaviour
 
     public virtual void StartScreen()
     {
-
-        Color basecolor = new Color(185, 75, 25, 0);
+        Color baseColor = new Color(255, 255, 255, 0);
 
         gameObject.SetActive(true);
 
         foreach (var item in imagesToFade)
         {
-            item.color = basecolor;
-
+            item.color = baseColor;
         }
 
         foreach (var item in imagesToFade)
@@ -43,14 +49,11 @@ public abstract class UIScreen : MonoBehaviour
             item.DOFade(1, fadeDuration);
         }
     }
-
-
     public void CloseScreen()
     {
-        ClosesCreenWithAwait();
+         CloseScreenAnimation();
     }
-
-    private async void ClosesCreenWithAwait()
+    private async Task CloseScreenAnimation()
     {
         foreach (var item in imagesToFade)
         {
@@ -62,4 +65,8 @@ public abstract class UIScreen : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
+
+
+
+   
 

@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class ButtonTest : Button_Logic
 {
-    private void Start()
-    {
-        //AddListener(() => Debug.Log($"Working {name}"));
-    }
+  
 }
