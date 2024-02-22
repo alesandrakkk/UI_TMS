@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public abstract class UIScreen : MonoBehaviour
 {
     private Image[] imagesToFade;
-    //private Color[] buttonsColor;
+    private Color[] buttonsColor;
     
 
     private bool Animate = true;
@@ -17,13 +17,12 @@ public abstract class UIScreen : MonoBehaviour
 
     private void OnEnable()
     {
-          
         imagesToFade = GetComponentsInChildren<Image>();
-
-        //for (int i =0; i< imagesToFade.Length; i++)
-        //{
-        //    buttonsColor[i] = imagesToFade;
-        //}
+       
+        for (int i = 0; i < imagesToFade.Length ; i++)
+        {
+            buttonsColor[i] = imagesToFade[i].color;
+        }
 
         if (imagesToFade.Count() < 1)
             Animate = false;
@@ -35,13 +34,17 @@ public abstract class UIScreen : MonoBehaviour
 
     public virtual void StartScreen()
     {
-        Color baseColor = new Color(255, 255, 255, 0);
 
         gameObject.SetActive(true);
 
-        foreach (var item in imagesToFade)
+        Color[] buttonsColor = new Color[1];
+
+        for (int i=0; i<buttonsColor.Length - 1; i++)
         {
-            item.color = baseColor;
+        
+        Color baseColor = new Color(buttonsColor[i].r, buttonsColor[i].g, buttonsColor[i].b, 0);
+
+            imagesToFade[i].color = baseColor;
         }
 
         foreach (var item in imagesToFade)

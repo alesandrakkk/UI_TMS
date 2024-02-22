@@ -23,6 +23,7 @@ public class MainMenu: UIScreen
      private void StartGame()
     {
         Debug.Log("Let's start!");
+
         gameScreen.SetupScreen(this);
 
           CloseScreen();
@@ -46,8 +47,10 @@ public class MainMenu: UIScreen
     void StartOptions()
     {
         optionsScreen.SetupScreen(this);
+
         CloseScreen();
-        
+
+        optionsScreen.StartScreen();
     }
 
 }
