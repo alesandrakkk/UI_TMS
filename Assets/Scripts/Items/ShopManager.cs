@@ -29,7 +29,10 @@ namespace Assets.Scripts.Items
         {
             for (int i = 0; i < items.Count; i++)
             {
-                
+                //if (items[i] <= myMoney)
+                //{
+
+                //}
             }
         }
 

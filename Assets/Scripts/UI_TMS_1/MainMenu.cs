@@ -48,7 +48,7 @@ public class MainMenu: UIScreen
     {
         optionsScreen.SetupScreen(this);
 
-        CloseScreen();
+         CloseScreen();
 
         optionsScreen.StartScreen();
     }

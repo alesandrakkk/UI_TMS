@@ -12,7 +12,7 @@ public abstract class UIScreen : MonoBehaviour
     
 
     private bool Animate = true;
-    public float fadeDuration = 0.5f;
+    public float fadeDuration = 0.1f;
 
 
     private void OnEnable()
@@ -52,9 +52,9 @@ public abstract class UIScreen : MonoBehaviour
             item.DOFade(1, fadeDuration);
         }
     }
-    public void CloseScreen()
+    public  async void CloseScreen()
     {
-         CloseScreenAnimation();
+          await CloseScreenAnimation();
     }
     private async Task CloseScreenAnimation()
     {
