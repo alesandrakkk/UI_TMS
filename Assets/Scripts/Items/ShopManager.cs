@@ -1,21 +1,37 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace Assets.Scripts.Items
 {
-    public class NewBehaviourScript1 : MonoBehaviour
+    public class ShopManager : MonoBehaviour
     {
+        [SerializeField]  private int myMoney = 1000;
 
-        // Use this for initialization
-        void Start()
+        
+        [SerializeField] private Items _item;
+
+        
+        [SerializeField] private ButtonTest _buyButton;
+
+        private List<Items> items = new List<Items>();
+
+
+
+        void Awake()
         {
-
+            _buyButton.AddListener(BuyItem);
         }
 
-        // Update is called once per frame
-        void Update()
+        private void BuyItem()
         {
-
+            for (int i = 0; i < items.Count; i++)
+            {
+                
+            }
         }
+
     }
 }
