@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2147996974424073248}
   - component: {fileID: 2147996974424073254}
   - component: {fileID: 2147996974424073249}
+  - component: {fileID: -2609176193003306674}
   m_Layer: 5
   m_Name: Item template
   m_TagString: Untagged
@@ -71,7 +72,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 55d092711a8349c41a6676eaa367d6c1, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -79,7 +80,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.12
+--- !u!114 &-2609176193003306674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147996974424073251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11c3ee9b8b31d746891f3e0a1c24f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleTxt: {fileID: 2147996975788737851}
+  costTXT: {fileID: 2147996974884392417}
 --- !u!1 &2147996974788395631
 GameObject:
   m_ObjectHideFlags: 0

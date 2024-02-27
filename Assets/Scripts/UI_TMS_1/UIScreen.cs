@@ -10,8 +10,8 @@ public abstract class UIScreen : MonoBehaviour
     private Image[] imagesToFade;
     private Color[] buttonsColor;
     
-
     private bool Animate = true;
+
     public float fadeDuration = 0.1f;
 
 
