@@ -14,6 +14,8 @@ namespace Assets.Scripts.Items
         [SerializeField] private TMP_Text _myMoneyUI;
 
         [SerializeField] private Sprite[] _sprites;
+        [SerializeField] private ItemShopTemplate[] slots;
+
         [SerializeField] private RectTransform _scrollViewItem;
         
         [SerializeField] private Items _item;
@@ -38,7 +40,7 @@ namespace Assets.Scripts.Items
             
 
 
-           // _buyButton.AddListener(BuyItem);
+            //_buyButton.OnClick.AddListener(BuyItem);
         }
          
         public void ItemInstance()
@@ -62,9 +64,9 @@ namespace Assets.Scripts.Items
 
         //private void BuyAccess()
         //{
-        //    for (int i =0; i<items.Count; i++)
+        //    for (int i = 0; i < items.Count; i++)
         //    {
-        //        if (_myMoney >= items[i].baseCost);
+        //        if (items[i] <= _myMoney) ;
         //    }
         //}
 
