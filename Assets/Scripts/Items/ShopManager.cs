@@ -10,6 +10,7 @@ namespace Assets.Scripts.Items
     {
         private const int _maxPrice = 999;
 
+        [SerializeField] private Items _item;
         [SerializeField]  private int _myMoney = 1000;
         [SerializeField] private TMP_Text _myMoneyUI;
 
@@ -18,7 +19,6 @@ namespace Assets.Scripts.Items
 
         [SerializeField] private RectTransform _scrollViewItem;
         
-        [SerializeField] private Items _item;
         [SerializeField] private int _quantityItem = 30;
 
         [SerializeField] private List<Items> items = new List<Items>();
@@ -38,9 +38,12 @@ namespace Assets.Scripts.Items
 
                 items.Add(_item);
             
+            foreach (var item in _buyButton)
+            {
+                item.AddListener(BuyAccess);
+            }
 
-
-            //_buyButton.OnClick.AddListener(BuyItem);
+            
         }
          
         public void ItemInstance()
@@ -62,19 +65,30 @@ namespace Assets.Scripts.Items
 
         }
 
-        //private void BuyAccess()
-        //{
-        //    for (int i = 0; i < items.Count; i++)
-        //    {
-        //        if (items[i] <= _myMoney) ;
-        //    }
-        //}
+        private void BuyAccess()
+        {
+            foreach (var item in items)
+            {
+
+
+                if (_myMoney >= _item.Price)
+                {
+                    _buyButton.interactable = true;
+                    BuyItem();
+                }
+
+
+            }
+        }
 
         private void BuyItem()
         {
             for (int i = 0; i < items.Count ; i++)
             {
-                
+                if(items[i].Price <= _myMoney)
+                {
+                    _myMoney -= items[i].Price;
+                } 
             }
         }
 
